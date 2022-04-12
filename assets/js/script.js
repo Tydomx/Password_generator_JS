@@ -1,6 +1,6 @@
 // Assignment code here
+// global vars allowed for the user inputs
   var upperCase=  "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-  console.log(upperCase);
   var lowerCase= "abcdefghijklmnopqrstuvqxyz".split("")
   var symbol= "!@#$%^&*()_+~\/`|{}[]:;?<>,.-=".split("")
   var number= "1234567890".split("")
@@ -12,10 +12,12 @@ function userInput() {
         alert("Hey you need to enter a number");
         return;
       } 
+      // takes password length between 8 and 128 characters
       if (passwordLength < 8 || passwordLength > 128) {
         alert("please enter a password between 8 and 128 characters!");
         return;
       }
+      // confirms user with confirm windows for Upper, Lower, Symbols, and numbers
   var upperCaseConfirm = window.confirm("Would you like the password to have upperCase characters?");
   var lowerCaseConfirm = window.confirm("Would you like the password to have lowerCase characters?");
   var symbolConfirm = window.confirm("Would you like the password to have symbols?"); 
@@ -25,7 +27,7 @@ function userInput() {
         alert("you need to check at least 1 character type!");
         return;
       }
-    
+    // stores user data into an object
   var userData = {
     passwordLength: passwordLength,
     lowerCaseConfirm: lowerCaseConfirm,
@@ -40,16 +42,14 @@ function userInput() {
 // randomizes the numbers for you
 function randomizer(array) {
   var index = Math.floor(Math.random() * array.length)
-  console.log(index);
   var char = array[index]
-  console.log(char);
   return char;
 }
 
 // password is generated depending on user's choices
 function generatePassword() {
   var passwordData = userInput();
-  console.log(passwordData);
+  // if user choices are true they will be 
   var allUserChoices = [];
     if(passwordData.lowerCaseConfirm === true) {
       allUserChoices = allUserChoices.concat(lowerCase)
@@ -63,13 +63,12 @@ function generatePassword() {
     if (passwordData.numberConfirm === true) {
       allUserChoices = allUserChoices.concat(number)
     }
-    console.log(allUserChoices);
-
+    // goes thru user's input and loops thru each of their 'true' choices to randomize a password
     var password = [];
     for (var i=0; i < passwordData.passwordLength; i++) {
       password.push(randomizer(allUserChoices));
     }
-    console.log("password", password.join(""));
+    // makes password into a string
     return password.join("");
 }
 
