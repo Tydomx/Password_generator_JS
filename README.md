@@ -8,6 +8,8 @@ This is a password generator that generates a password based on the user's input
 ### Screenshot(s) ###
 ![image](https://user-images.githubusercontent.com/99767019/163017450-0cf7e719-08b3-44fa-9dce-710e568d1dd9.png)
 ![image](https://user-images.githubusercontent.com/99767019/163017508-1a3aaea8-d8de-403d-804a-59951b4c0e00.png)
+![image](https://user-images.githubusercontent.com/99767019/163019385-8b1fb5c5-b4fa-4902-8464-b585d61729c4.png)
+
 
 ### Link(s) ###
 *To the GitHub*
